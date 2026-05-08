@@ -188,7 +188,7 @@ export default function App() {
     const { data, error } = await supabase
       .from("equipment")
       .select("id, Name, Year, type, status, hours, next_service, manufacturer, Icon, equipment_number")
-      .order("id");
+      .order("Name");
     if (error) {
       console.error("Supabase error:", error);
       notify("❌ שגיאה בטעינת נתונים: " + error.message);
@@ -214,7 +214,7 @@ export default function App() {
     };
 
     if (editEq) {
-      const { error } = await supabase.from("equipment").update(payload).eq("id", editEq.id);
+      const { error } = await supabase.from("equipment").update(payload).eq("Name", editEq.Name);
       if (error) { notify("❌ שגיאה בעדכון: " + error.message); return; }
       notify("✅ הכלי עודכן בהצלחה!");
     } else {
@@ -229,7 +229,7 @@ export default function App() {
   }
 
   async function deleteEquipment(id) {
-    const { error } = await supabase.from("equipment").delete().eq("id", id);
+    const { error } = await supabase.from("equipment").delete().eq("Name", id);
     if (error) { notify("❌ שגיאה במחיקה: " + error.message); return; }
     notify("🗑️ הכלי נמחק");
     setDeleteConfirm(null);
@@ -284,7 +284,7 @@ export default function App() {
         {/* Content */}
         <main style={{ flex: 1, overflowY: "auto", padding: 16, paddingBottom: 90 }}>
           {loading ? <Spinner /> :
-            detailEq ? <Detail eq={detailEq} back={() => setDetailEq(null)} onEdit={() => openEdit(detailEq)} onDelete={() => setDeleteConfirm(detailEq.id)} /> :
+            detailEq ? <Detail eq={detailEq} back={() => setDetailEq(null)} onEdit={() => openEdit(detailEq)} onDelete={() => setDeleteConfirm(detailEq.Name)} /> :
             tab === "home" ? <Home equipment={equipment} setTab={setTab} setDetailEq={setDetailEq} onNew={openNew} /> :
             tab === "equipment" ? <EqList equipment={equipment} setDetailEq={setDetailEq} onNew={openNew} /> :
             <Placeholder tab={tab} />
