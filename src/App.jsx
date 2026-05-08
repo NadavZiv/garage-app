@@ -58,7 +58,7 @@ function Spinner() {
 function EditEquipmentModal({ eq, onSave, onClose }) {
   const [form, setForm] = useState({
     Name: eq?.Name || "",
-    number: eq?.number || "",
+    equipment_number: eq?.number || "",
     type: eq?.type || "",
     status: eq?.status || "active",
     hours: eq?.hours || 0,
