@@ -310,7 +310,7 @@ function Home({ equipment, setTab, setDetailEq, onNew }) {
               <span style={{ fontSize: 22 }}>{eq.Icon}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{eq.Name}</div>
-                <div style={{ color: C.soft, fontSize: 12 }}>{eq.number}</div>
+                <div style={{ color: C.soft, fontSize: 12 }}>{eq.equipment_number}</div>
               </div>
               <Badge color={cfg.color} dim={cfg.dim} small>{cfg.label}</Badge>
             </div>
@@ -351,7 +351,7 @@ function EqList({ equipment, setDetailEq, onNew }) {
                 <div style={{ width: 52, height: 52, background: C.surface, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, flexShrink: 0 }}>{eq.Icon}</div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontWeight: 800, fontSize: 16 }}>{eq.Name}</div>
-                  <div style={{ color: C.soft, fontSize: 12 }}>{eq.number} · {eq.manufacturer}</div>
+                  <div style={{ color: C.soft, fontSize: 12 }}>{eq.equipment_number} · {eq.manufacturer}</div>
                   <div style={{ color: C.muted, fontSize: 11, marginTop: 2 }}>{eq.type} · {eq.Year}</div>
                 </div>
                 <Badge color={cfg.color} dim={cfg.dim} small>{cfg.label}</Badge>
@@ -379,7 +379,7 @@ function EqDetail({ eq, back, onEdit, onDelete }) {
         <button onClick={back} style={{ background: C.card, border: `1px solid ${C.border}`, color: C.text, borderRadius: 10, padding: "8px 14px", fontSize: 14, cursor: "pointer", fontFamily: "inherit" }}>← חזרה</button>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontWeight: 800, fontSize: 17 }}>{eq.Name}</div>
-          <div style={{ color: C.soft, fontSize: 12 }}>{eq.number} · {eq.manufacturer}</div>
+          <div style={{ color: C.soft, fontSize: 12 }}>{eq.equipment_number} · {eq.manufacturer}</div>
         </div>
         <Badge color={cfg.color} dim={cfg.dim}>{cfg.label}</Badge>
       </div>
