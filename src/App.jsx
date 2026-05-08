@@ -187,7 +187,7 @@ export default function App() {
     setLoading(true);
     const { data, error } = await supabase
       .from("equipment")
-      .select("id, Name, Year, type, status, hours, next_service, manufacturer, Icon, equipment_number")
+      .select("Name, Year, type, status, hours, next_service, manufacturer, Icon, equipment_number")
       .order("Name");
     if (error) {
       console.error("Supabase error:", error);
