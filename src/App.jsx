@@ -1,6 +1,3 @@
-git add .
-git commit -m "add maintenance module"
-git push
 import { useState, useEffect } from "react";
 import { supabase } from "./supabase";
 
