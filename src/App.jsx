@@ -272,7 +272,7 @@ function EditInventoryModal({ item, onSave, onClose }) {
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-            <Input label="מק\"ט" value={form.catalog_number} onChange={v => f("catalog_number", v)} placeholder="OIL-001" />
+            <Input label="מקט" value={form.catalog_number} onChange={v => f("catalog_number", v)} placeholder="OIL-001" />
             <Input label="יחידת מידה" value={form.unit} onChange={v => f("unit", v)} placeholder="ליטר" />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
