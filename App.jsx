@@ -149,7 +149,7 @@ function NewMaintModal({ equipment, workers, onSave, onClose }) {
       labor_cost: parseInt(form.labor_cost) || 0,
       parts_cost: parseInt(form.parts_cost) || 0,
       total_cost: totalCost,
-      next_service_date: form.next_service_date || null,
+      Replace: next_service_date: form.next_service_date ? form.next_service_date : null,
       status: form.status,
       hours: parseInt(form.hours) || null,
     };
